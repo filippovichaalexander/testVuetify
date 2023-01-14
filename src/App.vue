@@ -1,45 +1,10 @@
 <template>
   <v-app>
-    
-    <!-- <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar> -->
-
     <v-main>
-      <ListItems :trips="trips"/>
+      <div class="wrapper">
+        <h1 class="pt-5 text-center">Trips types</h1>
+        <ListItems :trips="trips"/>
+      </div>
     </v-main>
   </v-app>
 </template>
@@ -53,47 +18,80 @@ export default {
       return {
         trips: [
           {
-            name: '"Город сыра и мира"',
+            name: '"Town of Cheese and Wine"',
             stars: 5,
-            type: "Историческая",
-            vehicle: "На автобусе",
-            date: "28 марта",
-            totalHours: "9 часов",
-            image: "logo.png"
+            type: "Historical",
+            vehicle: "By bus",
+            date: "28 of March",
+            totalHours: "9 hours",
+            afterElement: true
           },
           {
-            name: 'Экскурсия в национальный парк "Куршская коса"',
+            name: 'Trip to national park "Yalla"',
             stars: 5,
-            type: "Обзорная",
-            vehicle: "На автобусе",
-            date: "25 марта",
-            totalHours: "6 часов",
-            image: "../assets/star.png"
+            type: "Sightseeng",
+            vehicle: "By bus",
+            date: "25 of March",
+            totalHours: "6 hours",
+            afterElement: true 
           },
           {
-            name: '"О кирхах, рыцарях и замках"',
+            name: '"Of castles and Knights"',
             stars: 5,
-            type: "Историческая",
-            vehicle: "На автобусе",
-            date: "29 марта",
-            totalHours: "6 часов",
+            type: "Historical",
+            vehicle: "By bus",
+            date: "29 of March",
+            totalHours: "6 hours",
+            afterElement: true
           },
           {
-            name: "Экскурсия в Янтарный",
+            name: "Trip to the night beach",
             stars: 4,
-            type: "Историческая",
-            vehicle: "На автобусе",
-            date: "29 марта",
-            totalHours: "6 часов",
-            guestsAmount: "до 49",
+            type: "Historical",
+            vehicle: "By bus",
+            date: "29 of March",
+            totalHours: "6 hours",
+            guestsAmount: "to 49",
+            afterElement: false
           },
         ],
       };
     },
+    // mounted() {
 
-
+    // },
   components: {
     ListItems
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.wrapper {
+  background: rgb(217,217,221);
+  background: linear-gradient(180deg, rgba(217,217,221,1) 0%, rgba(217,217,221,0.23042720506171221) 47%, rgba(184,189,190,0.8522759445575105) 100%);
+  -webkit-animation-name: content;
+  animation-name: content;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+
+}
+ 
+@keyframes content {
+    from {
+      opacity: 0;
+      /* transform: translateY(5%); */
+    }
+    to {
+      opacity: 1;
+      /* transform: translateY(0%); */
+    }
+  }
+
+</style>

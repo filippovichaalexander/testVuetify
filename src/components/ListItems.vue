@@ -1,34 +1,26 @@
 <template>
-    <!-- <div class="Items__wrapper">
-      <ListItem :trips="trips" />
-    </div> -->
-
-
-
-    <v-container>
-        <v-row>
-            <v-col cols="12">
-                <ListItem :trips="trips" />
-            </v-col>
-        </v-row>
-    </v-container>
+  <v-container>
+    <v-row>
+        <v-col cols="12">
+            <ListItem 
+            :trips="trips" 
+            />
+        </v-col>
+    </v-row>
+  </v-container>
 </template>
   
   <script>
   import ListItem from "./ListItem.vue";
   export default {
     name: "ListItems",
-    // props: {
-    //   msg: String,
-    // },
     components: {
         ListItem,
     },
-    props: ["trips"],
-  };
+    props: ["trips"]
+};
   </script>
   
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>
   h3 {
     margin: 40px 0 0;
